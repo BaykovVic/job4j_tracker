@@ -2,17 +2,12 @@ package ru.job4j.oop;
 
 public class Jukebox {
     public void music(int position) {
-        switch (position) {
-            case 1:
-                System.out.println("Пусть бегут неуклюже");
-                break;
-            case 2:
-                System.out.println("За день мы устали очень");
-                break;
-            default:
-                System.out.println("Песня не найдена");
-                break;
-        }
+        String rsl = switch (position) {
+            case 1 -> "Пусть бегут неуклюже";
+            case 2 -> "За день мы устали очень";
+            default -> "Песня не найдена";
+        };
+        System.out.println(rsl);
     }
 
     public static void main(String[] args) {
