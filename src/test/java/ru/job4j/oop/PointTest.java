@@ -19,7 +19,7 @@ public class PointTest {
         Point a = new Point(2, 0);
         Point b = new Point(0, 0);
         double expected = 2;
-        double out = a.distance(b);
+        double out = a.distance3D(b);
         Assert.assertEquals(expected, out, 0.01);
     }
 
@@ -38,6 +38,42 @@ public class PointTest {
         Point b = new Point(0, 2);
         double expected = 2;
         double out = a.distance(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when000to200then2() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(2, 0, 0);
+        double expected = 2;
+        double out = a.distance3D(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when200to000then2() {
+        Point a = new Point(2, 0, 0);
+        Point b = new Point(0, 0, 0);
+        double expected = 2;
+        double out = a.distance3D(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when002to000then2() {
+        Point a = new Point(0, 0, 2);
+        Point b = new Point(0, 0, 0);
+        double expected = 2;
+        double out = a.distance3D(b);
+        Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when000to002then2() {
+        Point a = new Point(0, 0, 0);
+        Point b = new Point(0, 0, 2);
+        double expected = 2;
+        double out = a.distance3D(b);
         Assert.assertEquals(expected, out, 0.01);
     }
 }
