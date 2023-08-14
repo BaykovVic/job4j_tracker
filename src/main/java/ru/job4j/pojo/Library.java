@@ -20,7 +20,7 @@ public class Library {
 
         System.out.println("---Searching book with name---");
         for (int i = 0; i < bookShelf.length; i++) {
-            if (bookShelf[i].getName().equals("Clean Code")) {
+            if ("Clean Code".equals(bookShelf[i].getName())) {
                 System.out.println(bookShelf[i].getName() + " " + bookShelf[i].getPageCount());
             }
         }
