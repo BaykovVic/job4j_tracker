@@ -32,7 +32,7 @@ public class AnalyzeByMap {
         List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subj : pupil.subjects()) {
-                map.put(subj.name(), map.getOrDefault(subj.name(), 0) + subj.score());
+                map.merge(subj.name(), subj.score(), (oldVal, newVal) -> oldVal + subj.score());
             }
         }
         for (String name : map.keySet()) {
@@ -59,7 +59,7 @@ public class AnalyzeByMap {
         List<Label> labels = new ArrayList<>();
         for (Pupil pupil : pupils) {
             for (Subject subj : pupil.subjects()) {
-                map.put(subj.name(), map.getOrDefault(subj.name(), 0) + subj.score());
+                map.merge(subj.name(), subj.score(), (oldVal, newVal) -> oldVal + subj.score());
             }
         }
         for (String name : map.keySet()) {
